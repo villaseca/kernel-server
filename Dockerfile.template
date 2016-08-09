@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_ARCH%%-alpine-node
+FROM resin/%%RESIN_ARCH%%-node
 
 RUN npm install --global localtunnel
 
