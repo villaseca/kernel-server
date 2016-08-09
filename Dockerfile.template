@@ -1,11 +1,11 @@
-FROM resin/%%RESIN_ARCH%%-node:slim
+FROM resin/%%RESIN_ARCH%%-alpine-node
 
 RUN npm install --global localtunnel
 
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
 
-COPY start.sh /start.sh
+ADD . /app
 
-COPY kernel-server.js /kernel-server.js
+WORKDIR /app
 
 CMD ["sh", "/start.sh"]
