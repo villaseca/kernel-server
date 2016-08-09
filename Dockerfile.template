@@ -1,6 +1,7 @@
-FROM resin/%%RESIN_ARCH%%-node
+FROM resin/%%RESIN_ARCH%%-alpine:latest
 
-RUN npm install --global localtunnel
+RUN apk update && apk add nodejs bash && \
+  npm install --global localtunnel
 
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
 
