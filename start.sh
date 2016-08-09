@@ -1,5 +1,5 @@
 #!/bin/bash
-node kernel-server.js &
+python kernel-server.py &
 lt --port 80 &
 
 while true

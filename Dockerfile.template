@@ -1,9 +1,10 @@
 FROM resin/%%RESIN_ARCH%%-alpine:latest
 
-RUN apk update && apk add nodejs bash && \
-  npm install --global localtunnel
-
-RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
+RUN apk update && apk add nodejs bash py-pip && \
+  npm install --global localtunnel && \
+  rm -rf /var/cache/apk/* && \
+  pip install --upgrade pip && \
+  pip install flask
 
 ADD . /app
 
