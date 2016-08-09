@@ -1,6 +1,6 @@
 var http = require('http');
 
-const PORT=8080;
+const PORT=80;
 
 function handleRequest(request, response){
     response.end('Testing... ' + request.url);
