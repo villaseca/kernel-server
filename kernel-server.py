@@ -7,8 +7,12 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 app = Flask(__name__)
 
-@app.route('/kernel_test')
+@app.route('/')
 def hello():
+    return 'Hey you!'
+
+@app.route('/kernel_test')
+def kernel():
     cmd = ['sh','kernel.sh']
     p = subprocess.Popen(cmd, stdout = subprocess.PIPE,
                             stderr=subprocess.PIPE,

@@ -1,6 +1,5 @@
 #!/bin/bash
 python kernel-server.py &
-lt --port 80 &
 
 echo "Hello"
 
