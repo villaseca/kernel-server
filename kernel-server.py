@@ -10,6 +10,7 @@ def hello():
 @app.route('/modprobe/<module>')
 def modprobe(module):
     subprocess.call(['modprobe',module])
+    return 'Trying to load ' + module + ' module...'
 
 @app.route('/lsmod')
 def lsmod():
